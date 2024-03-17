@@ -78,3 +78,7 @@ keymap.set("x", "<leader>p", [["_dP]])
 -- center screen on search
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
+
+-- yank to clipboard register
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
