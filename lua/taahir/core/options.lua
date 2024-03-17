@@ -2,38 +2,42 @@ local opt = vim.opt
 
 -- line numbers
 -- opt.relativenumber = true
-opt.number = true 
+opt.number = true
 
--- tabs $ indentation 
+-- tabs $ indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = true 
+opt.expandtab = true
 opt.autoindent = true
 
--- line wrapping 
-opt.wrap = false 
+-- line wrapping
+opt.wrap = false
 
 -- search settings
-opt.ignorecase = true 
-opt.smartcase = true 
+opt.ignorecase = true
+opt.smartcase = true
 
--- cursor line 
-opt.cursorline = true 
+-- cursor line
+opt.cursorline = true
 
 -- appearance
-opt.termguicolors = true 
-opt.background = "dark" 
+opt.termguicolors = true
+opt.background = "dark"
 opt.signcolumn = "yes"
 
--- backspace 
+-- backspace
 opt.backspace = "indent,eol,start"
 
--- clipboard 
+-- clipboard
 opt.clipboard:append("unnamedplus")
 
--- split windows 
-opt.splitright = true 
-opt.splitbelow = true 
+-- split windows
+opt.splitright = true
+opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true

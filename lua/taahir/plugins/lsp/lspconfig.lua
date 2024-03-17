@@ -56,7 +56,16 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- configure html server
+-- configure rust server
+lspconfig["rust_analyzer"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		["rust_analyzer"] = {},
+	},
+})
+
+-- configure python server
 lspconfig["pyright"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,

@@ -71,3 +71,10 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 -- horizontal scrolling
 keymap.set("n", "<C-L>", "20zl") --  20 chars right
 keymap.set("n", "<C-H>", "20zh") -- 20 chars left
+
+-- blackhole paste
+keymap.set("x", "<leader>p", [["_dP]])
+
+-- center screen on search
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
