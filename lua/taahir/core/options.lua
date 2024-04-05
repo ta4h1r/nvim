@@ -35,7 +35,7 @@ opt.backspace = "indent,eol,start"
 opt.splitright = true
 opt.splitbelow = true
 
-opt.iskeyword:append("-")
+-- opt.iskeyword:append("-")
 
 opt.swapfile = false
 opt.backup = false

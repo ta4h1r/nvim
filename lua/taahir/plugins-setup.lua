@@ -111,6 +111,10 @@ return packer.startup(function(use)
 
 	use("theprimeagen/harpoon")
 
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
+
+	use({ "Shatur/neovim-session-manager", requires = { "nvim-lua/plenary.nvim" } })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

@@ -6,6 +6,9 @@ local keymap = vim.keymap
 -- General Keymaps
 ---------------------
 
+-- don't ever press <C-z>
+keymap.set("n", "<C-z>", "<ESC>")
+
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
@@ -29,6 +32,36 @@ keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+
+-- moving lines
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- keep cursor on same line with J
+keymap.set("n", "J", "mzJ`z")
+
+-- scroll half page with cursor in page center
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- horizontal scrolling
+keymap.set("n", "<leader>l", "20zl") --  20 chars right
+keymap.set("n", "<leader>h", "20zh") -- 20 chars left
+
+-- blackhole paste
+keymap.set("x", "<leader>p", [["_dP]])
+
+-- center screen on search
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
+
+-- yank to clipboard register
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+keymap.set("n", "<leader>Y", [["+Y]])
+
+-- buffers
+keymap.set("n", "[b", ":bp<CR>")
+keymap.set("n", "]b", ":bn<CR>")
 
 ----------------------
 -- Plugin Keybinds
@@ -56,29 +89,3 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-
--- moving lines
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
--- keep cursor on same line with J
-keymap.set("n", "J", "mzJ`z")
-
--- scroll half page with cursor in page center
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
-
--- horizontal scrolling
-keymap.set("n", "<C-L>", "20zl") --  20 chars right
-keymap.set("n", "<C-H>", "20zh") -- 20 chars left
-
--- blackhole paste
-keymap.set("x", "<leader>p", [["_dP]])
-
--- center screen on search
-keymap.set("n", "n", "nzzzv")
-keymap.set("n", "N", "Nzzzv")
-
--- yank to clipboard register
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
