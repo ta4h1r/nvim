@@ -47,6 +47,11 @@ end
 
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
+-- Add line folding capabilities for nvim-ufo
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
+}
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
@@ -67,6 +72,13 @@ lspconfig["rust_analyzer"].setup({
 
 -- configure python server
 lspconfig["pyright"].setup({
+	settings = {
+		python = {
+			analysis = {
+				extraPaths = { "/Users/ta4h1r/" },
+			},
+		},
+	},
 	capabilities = capabilities,
 	on_attach = on_attach,
 })

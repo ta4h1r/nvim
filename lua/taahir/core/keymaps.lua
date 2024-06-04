@@ -63,6 +63,9 @@ keymap.set("n", "<leader>Y", [["+Y]])
 keymap.set("n", "[b", ":bp<CR>")
 keymap.set("n", "]b", ":bn<CR>")
 
+-- search under cursor
+keymap.set("n", "<leader>/", "yiwq/p<cr>") -- this is the same as pressing *
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
@@ -89,3 +92,13 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+keymap.set("n", "zR", require("ufo").openAllFolds)
+keymap.set("n", "zM", require("ufo").closeAllFolds)
+
+-- prompt for a refactor to apply when the remap is triggered
+keymap.set({ "n", "x" }, "<leader>rr", function()
+	require("refactoring").select_refactor()
+end)
+-- Note that not all refactor support both normal and visual mode

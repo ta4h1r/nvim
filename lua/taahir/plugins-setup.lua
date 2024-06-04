@@ -107,13 +107,32 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+	-- undotree
 	use("mbbill/undotree")
 
+	-- harpoon
 	use("theprimeagen/harpoon")
 
+	-- debugger
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 
+	-- session manage
 	use({ "Shatur/neovim-session-manager", requires = { "nvim-lua/plenary.nvim" } })
+
+	-- tsx comments
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+
+	-- folding
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+
+	-- refactoring
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
