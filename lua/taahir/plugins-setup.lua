@@ -116,9 +116,6 @@ return packer.startup(function(use)
 	-- debugger
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 
-	-- session manage
-	use({ "Shatur/neovim-session-manager", requires = { "nvim-lua/plenary.nvim" } })
-
 	-- tsx comments
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
@@ -133,6 +130,9 @@ return packer.startup(function(use)
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	})
+
+	-- session manageer
+	use("rmagatti/auto-session")
 
 	if packer_bootstrap then
 		require("packer").sync()

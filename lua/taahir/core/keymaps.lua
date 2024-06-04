@@ -97,8 +97,7 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 keymap.set("n", "zR", require("ufo").openAllFolds)
 keymap.set("n", "zM", require("ufo").closeAllFolds)
 
--- prompt for a refactor to apply when the remap is triggered
-keymap.set({ "n", "x" }, "<leader>rr", function()
-	require("refactoring").select_refactor()
-end)
--- Note that not all refactor support both normal and visual mode
+-- list sessions
+keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
+	noremap = true,
+})
