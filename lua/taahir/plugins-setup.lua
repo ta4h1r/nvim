@@ -136,9 +136,12 @@ return packer.startup(function(use)
 
 	-- tabs line
 	-- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-	use("nvim-tree/nvim-web-devicons") -- OPTIONAL: for file icons
+	use("nvim-tree/nvim-web-devicons") -- OPTIONAL: for file icon
 	use("lewis6991/gitsigns.nvim") -- OPTIONAL: for git status
 	use("romgrk/barbar.nvim")
+
+	-- diff view
+	use("sindrets/diffview.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
