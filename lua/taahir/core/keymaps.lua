@@ -101,3 +101,8 @@ keymap.set("n", "zM", require("ufo").closeAllFolds)
 keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
 	noremap = true,
 })
+
+-- prompt for a refactor to apply when the remap is triggered
+keymap.set({ "n", "x" }, "<leader>rr", function()
+	require("telescope").extensions.refactoring.refactors()
+end) -- Note that not all refactor support both normal and visual mode

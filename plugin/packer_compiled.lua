@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/cmp-buffer",

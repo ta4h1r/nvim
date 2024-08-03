@@ -1,4 +1,5 @@
 require("taahir.plugins.auto-session")
+require("taahir.plugins.barbar")
 require("taahir.plugins-setup")
 require("taahir.core.options")
 require("taahir.core.keymaps")
