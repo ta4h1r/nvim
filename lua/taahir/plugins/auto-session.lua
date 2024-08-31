@@ -7,8 +7,8 @@
 require("auto-session").setup({
 	log_level = "error",
 
-	-- auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
-	auto_session_allowed_dirs = { "~/Dev/*", "~/.config/*" },
+	auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
+	-- auto_session_allowed_dirs = { "~/Dev/*", "~/.config/*" },
 
 	-- ⚠️ This will only work if Telescope.nvim is installed
 	-- The following are already the default values, no need to provide them if these are already the settings you want.

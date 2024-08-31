@@ -106,3 +106,6 @@ keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_sessio
 keymap.set({ "n", "x" }, "<leader>rr", function()
 	require("telescope").extensions.refactoring.refactors()
 end) -- Note that not all refactor support both normal and visual mode
+
+-- lazygit
+keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>")

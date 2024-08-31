@@ -136,13 +136,24 @@ return packer.startup(function(use)
 
 	-- tabs line
 	-- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-	use("nvim-tree/nvim-web-devicons") -- OPTIONAL: for file icon
-	use("lewis6991/gitsigns.nvim") -- OPTIONAL: for git status
+	-- use("nvim-tree/nvim-web-devicons") -- OPTIONAL: for file icon
+	-- use("lewis6991/gitsigns.nvim") -- OPTIONAL: for git status
 	use("romgrk/barbar.nvim")
 
 	-- diff view
 	use("sindrets/diffview.nvim")
 
+	-- lazygit
+	use({
+		"kdheepak/lazygit.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("telescope").load_extension("lazygit")
+		end,
+	})
 	if packer_bootstrap then
 		require("packer").sync()
 	end
