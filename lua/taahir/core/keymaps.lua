@@ -7,7 +7,7 @@ local keymap = vim.keymap
 ---------------------
 
 -- don't ever press <C-z>
-keymap.set("n", "<C-z>", "<ESC>")
+-- keymap.set("n", "<C-z>", "<ESC>")
 
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
