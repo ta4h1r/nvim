@@ -61,7 +61,6 @@ return packer.startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x", -- fuzzy finder
 		requires = {
-			"nvim-telescope/telescope.nvim",
 			"nvim-lua/plenary.nvim",
 		},
 	})
