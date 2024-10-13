@@ -64,7 +64,7 @@ keymap.set("n", "[b", ":bp<CR>")
 keymap.set("n", "]b", ":bn<CR>")
 
 -- search under cursor
-keymap.set("n", "<leader>/", "yiwq/p<cr>") -- this is the same as pressing *
+keymap.set("n", "<leader>/", "yiwq/p<cr>") -- this is the same as pressing * (or see telescope grep_string)
 
 ----------------------
 -- Plugin Keybinds
