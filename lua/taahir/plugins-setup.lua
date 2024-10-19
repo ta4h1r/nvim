@@ -160,6 +160,17 @@ return packer.startup(function(use)
 			require("telescope").load_extension("lazygit")
 		end,
 	})
+
+	-- color parentheses
+	use("junegunn/rainbow_parentheses.vim")
+
+	use({
+		"isak102/telescope-git-file-history.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"tpope/vim-fugitive",
+		},
+	})
 	if packer_bootstrap then
 		require("packer").sync()
 	end

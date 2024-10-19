@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1699524327/share/lua/5.1/?.lua;/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1699524327/share/lua/5.1/?/init.lua;/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1699524327/lib/luarocks/rocks-5.1/?.lua;/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1699524327/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1699524327/lib/lua/5.1/?.so"
+local package_path_str = "/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?.lua;/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?/init.lua;/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?.lua;/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/ta4h1r/.cache/nvim/packer_hererocks/2.1.1727870382/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -252,6 +252,11 @@ _G.packer_plugins = {
     path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
   },
+  ["rainbow_parentheses.vim"] = {
+    loaded = true,
+    path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/rainbow_parentheses.vim",
+    url = "https://github.com/junegunn/rainbow_parentheses.vim"
+  },
   ["refactoring.nvim"] = {
     loaded = true,
     path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
@@ -261,6 +266,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope-git-file-history.nvim"] = {
+    loaded = true,
+    path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/telescope-git-file-history.nvim",
+    url = "https://github.com/isak102/telescope-git-file-history.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -281,6 +291,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
     url = "https://github.com/inkarkat/vim-ReplaceWithRegister"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/ta4h1r/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-maximizer"] = {
     loaded = true,
