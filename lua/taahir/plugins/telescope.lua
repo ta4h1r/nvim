@@ -10,12 +10,6 @@ if not actions_setup then
 	return
 end
 
--- import git file history actions safely
-local actions_setup, gfh_actions = pcall(require, "telescope.extensions.git_file_history.actions")
-if not actions_setup then
-	return
-end
-
 -- configure telescope
 telescope.setup({
 	-- configure custom mappings
@@ -36,10 +30,10 @@ telescope.setup({
 			-- Keymaps inside the picker
 			mappings = {
 				i = {
-					["<C-g>"] = gfh_actions.open_in_browser,
+					["<C-g>"] = telescope.extensions.git_file_history.actions.open_in_browser,
 				},
 				n = {
-					["<C-g>"] = gfh_actions.open_in_browser,
+					["<C-g>"] = telescope.extensions.git_file_history.actions.open_in_browser,
 				},
 			},
 
@@ -51,5 +45,6 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("lazygit")
 telescope.load_extension("refactoring")
 telescope.load_extension("git_file_history")

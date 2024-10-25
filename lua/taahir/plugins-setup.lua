@@ -156,9 +156,6 @@ return packer.startup(function(use)
 			"nvim-telescope/telescope.nvim",
 			"nvim-lua/plenary.nvim",
 		},
-		config = function()
-			require("telescope").load_extension("lazygit")
-		end,
 	})
 
 	-- color parentheses
@@ -171,6 +168,7 @@ return packer.startup(function(use)
 			"tpope/vim-fugitive",
 		},
 	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
