@@ -1,8 +1,11 @@
 local opt = vim.opt
+local api = vim.api
 
 -- line numbers
--- opt.relativenumber = true
+opt.relativenumber = true
 opt.number = true
+api.nvim_create_autocmd("InsertEnter", { command = [[set norelativenumber]] })
+api.nvim_create_autocmd("InsertLeave", { command = [[set relativenumber]] })
 
 -- tabs $ indentation
 opt.tabstop = 4
