@@ -1,6 +1,32 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+local setup, barbar = pcall(require, "barbar")
+if not setup then
+	return
+end
+
+barbar.setup({
+	-- Enable/disable current/total tabpages indicator (top right corner)
+	tabpages = true,
+
+	gitsigns = {
+		added = { enabled = true, icon = "+" },
+		changed = { enabled = true, icon = "~" },
+		deleted = { enabled = true, icon = "-" },
+	},
+	filetype = {
+		-- Sets the icon's highlight group.
+		-- If false, will use nvim-web-devicons colors
+		custom_colors = false,
+
+		-- Requires `nvim-web-devicons` if `true`
+		enabled = true,
+	},
+
+	insert_at_end = true,
+})
+
 -- Move to previous/next
 map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
 map("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
@@ -23,6 +49,7 @@ map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
 -- Close buffer
 map("n", "<A-w>", "<Cmd>BufferClose<CR>", opts)
 map("n", "<A-q>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
+map("n", "<A-Q>", "<Cmd>BufferWipeout<CR>", opts)
 map("n", "<A-h>", "<Cmd>BufferCloseBuffersLeft<CR>", opts)
 map("n", "<A-l>", "<Cmd>BufferCloseBuffersRight<CR>", opts)
 -- Wipeout buffer

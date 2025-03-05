@@ -6,9 +6,6 @@ local keymap = vim.keymap
 -- General Keymaps
 ---------------------
 
--- don't ever press <C-z>
--- keymap.set("n", "<C-z>", "<ESC>")
-
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
@@ -52,6 +49,10 @@ keymap.set("n", "J", "mzJ`z")
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- scroll with cursor in place
+-- keymap.set("n", "<C-e>", "j<C-e>")
+-- keymap.set("n", "<C-y>", "k<C-y>")
+
 -- horizontal scrolling
 keymap.set("n", "<leader>l", "20zl") --  20 chars right
 keymap.set("n", "<leader>h", "20zh") -- 20 chars left
@@ -79,8 +80,8 @@ keymap.set("n", "<leader>/", "yiwq/p<cr>") -- this is the same as pressing * (or
 ----------------------
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
-keymap.set("n", "<leader>E", ":NvimTreeFindFile<CR>") -- toggle file explorer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>zz") -- toggle file explorer
+keymap.set("n", "<leader>E", ":NvimTreeFindFile<CR>zz") -- toggle file explorer
 
 -- telescope (see :help telescope.builtin)
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

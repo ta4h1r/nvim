@@ -2,10 +2,10 @@ local opt = vim.opt
 local api = vim.api
 
 -- line numbers
-opt.relativenumber = true
+opt.relativenumber = false
 opt.number = true
-api.nvim_create_autocmd("InsertEnter", { command = [[set norelativenumber]] })
-api.nvim_create_autocmd("InsertLeave", { command = [[set relativenumber]] })
+-- api.nvim_create_autocmd("InsertEnter", { command = [[set norelativenumber]] })
+-- api.nvim_create_autocmd("InsertLeave", { command = [[set relativenumber]] })
 
 -- tabs $ indentation
 opt.tabstop = 4
@@ -46,7 +46,7 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
 -- folding
-vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldcolumn = "0" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
