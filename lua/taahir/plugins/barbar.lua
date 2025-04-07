@@ -48,10 +48,12 @@ map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
 map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
 -- Close buffer
 map("n", "<A-w>", "<Cmd>BufferClose<CR>", opts)
-map("n", "<A-q>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
-map("n", "<A-Q>", "<Cmd>BufferWipeout<CR>", opts)
-map("n", "<A-h>", "<Cmd>BufferCloseBuffersLeft<CR>", opts)
-map("n", "<A-l>", "<Cmd>BufferCloseBuffersRight<CR>", opts)
+map("n", "<A-Q>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
+map("n", "<A-QQ>", "<Cmd>BufferWipeout<CR>", opts)
+map("n", "<A-H>", "<Cmd>BufferCloseBuffersLeft<CR>", opts)
+map("n", "<A-h>", "<Cmd>BufferScrollLeft 16<CR>", opts)
+map("n", "<A-L>", "<Cmd>BufferCloseBuffersRight<CR>", opts)
+map("n", "<A-l>", "<Cmd>BufferScrollRight 16<CR>", opts)
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands

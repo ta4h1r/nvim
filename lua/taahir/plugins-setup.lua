@@ -127,6 +127,7 @@ return packer.startup(function(use)
 		opt = true,
 		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
 	})
+	use({ "mfussenegger/nvim-jdtls", requires = { "mfussenegger/nvim-dap" } })
 
 	-- tsx comments
 	use("JoosepAlviste/nvim-ts-context-commentstring")
