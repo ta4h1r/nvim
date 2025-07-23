@@ -76,8 +76,11 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- useful snippets
 
 	-- managing & installing lsp servers, linters & formatters
-	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+	use({
+		"mason-org/mason.nvim",
+		branch = "v1.x",
+	}) -- in charge of managing lsp servers, linters & formatters
+	use("mason-org/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
@@ -174,6 +177,28 @@ return packer.startup(function(use)
 			"nvim-lua/plenary.nvim",
 			"tpope/vim-fugitive",
 		},
+	})
+
+	-- Avante
+
+	-- Required plugins
+	-- use("nvim-lua/plenary.nvim")
+	use("MunifTanjim/nui.nvim")
+	use("MeanderingProgrammer/render-markdown.nvim")
+
+	-- Optional dependencies
+	-- use("hrsh7th/nvim-cmp")
+	-- use("nvim-tree/nvim-web-devicons") -- or use 'echasnovski/mini.icons'
+	-- use("HakonHarnes/img-clip.nvim")
+	use("zbirenbaum/copilot.lua")
+	-- use("stevearc/dressing.nvim") -- for enhanced input UI
+	-- use("folke/snacks.nvim") -- for modern input UI
+
+	-- Avante.nvim with build process
+	use({
+		"yetone/avante.nvim",
+		branch = "main",
+		run = "make",
 	})
 
 	if packer_bootstrap then

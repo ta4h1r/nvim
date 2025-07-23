@@ -11,6 +11,8 @@ require("taahir.plugins.lsp.null-ls")
 
 require("taahir.plugins.auto-session")
 require("taahir.plugins.autopairs")
+require("taahir.plugins.copilot")
+require("taahir.plugins.avante")
 require("taahir.plugins.barbar")
 require("taahir.plugins.comment")
 require("taahir.plugins.gitsigns")
