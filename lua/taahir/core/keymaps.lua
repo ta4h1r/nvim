@@ -118,3 +118,6 @@ end) -- Note that not all refactor support both normal and visual mode
 
 -- lazygit
 keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>")
+
+-- toggle copilot
+keymap.set("n", "<leader>cp", "<cmd>Copilot toggle<cr>")
