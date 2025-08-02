@@ -162,6 +162,7 @@ return packer.startup(function(use)
 	-- lazygit
 	use({
 		"kdheepak/lazygit.nvim",
+		commit = "2432b447483f42ff2e18b2d392cb2bb27e495c08",
 		requires = {
 			"nvim-telescope/telescope.nvim",
 			"nvim-lua/plenary.nvim",
@@ -182,17 +183,14 @@ return packer.startup(function(use)
 	-- Avante
 
 	-- Required plugins
-	-- use("nvim-lua/plenary.nvim")
 	use("MunifTanjim/nui.nvim")
 	use("MeanderingProgrammer/render-markdown.nvim")
 
 	-- Optional dependencies
-	-- use("hrsh7th/nvim-cmp")
-	-- use("nvim-tree/nvim-web-devicons") -- or use 'echasnovski/mini.icons'
-	-- use("HakonHarnes/img-clip.nvim")
+	use("HakonHarnes/img-clip.nvim")
 	use("zbirenbaum/copilot.lua")
-	-- use("stevearc/dressing.nvim") -- for enhanced input UI
-	-- use("folke/snacks.nvim") -- for modern input UI
+	use("stevearc/dressing.nvim") -- for enhanced input UI
+	use("folke/snacks.nvim") -- for modern input UI
 
 	-- Avante.nvim with build process
 	use({
