@@ -5,9 +5,9 @@ require("avante").setup({
 			endpoint = "https://api.githubcopilot.com",
 			model = "gpt-4o-2024-11-20",
 			proxy = nil, -- [protocol://]host[:port] Use this proxy
-			allow_insecure = false, -- Allow insecure server connections
+			allow_insecure = true, -- Allow insecure server connections
 			timeout = 30000, -- Timeout in milliseconds
-			context_window = 64000, -- Number of tokens to send to the model for context
+			context_window = 128000, -- Number of tokens to send to the model for context
 			extra_request_body = {
 				temperature = 0.75,
 				max_tokens = 20480,

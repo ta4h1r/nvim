@@ -1,3 +1,10 @@
+-- node version
+-- Ensure Neovim uses the default nvm Node version
+local nvm_dir = os.getenv("HOME") .. "/.nvm"
+vim.fn.system("bash -c 'source " .. nvm_dir .. "/nvm.sh && nvm use default'")
+-- update Neovim's PATH to include the correct Node bin
+vim.env.PATH = os.getenv("HOME") .. "/.nvm/versions/node/$(nvm version default)/bin:" .. vim.env.PATH
+
 require("taahir.plugins-setup")
 
 require("taahir.core.options")
@@ -23,6 +30,6 @@ require("taahir.plugins.nvim-dap")
 require("taahir.plugins.nvim-tree")
 require("taahir.plugins.nvim-ufo")
 require("taahir.plugins.refactoring")
--- require("taahir.plugins.telescope")
+require("taahir.plugins.telescope")
 require("taahir.plugins.treesitter")
 require("taahir.plugins.undotree")

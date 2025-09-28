@@ -24,7 +24,7 @@ barbar.setup({
 		enabled = true,
 	},
 
-	insert_at_end = true,
+	insert_at_end = false,
 })
 
 -- Move to previous/next
