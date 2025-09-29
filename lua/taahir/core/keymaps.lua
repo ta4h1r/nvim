@@ -107,9 +107,9 @@ keymap.set("n", "zR", require("ufo").openAllFolds)
 keymap.set("n", "zM", require("ufo").closeAllFolds)
 
 -- list sessions
-keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
-	noremap = true,
-})
+-- keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
+-- 	noremap = true,
+-- })
 
 -- prompt for a refactor to apply when the remap is triggered
 keymap.set({ "n", "x" }, "<leader>rr", function()
