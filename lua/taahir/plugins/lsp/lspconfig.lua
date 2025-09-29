@@ -1,8 +1,8 @@
 -- import lspconfig plugin safely
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
-	return
-end
+-- local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+-- if not lspconfig_status then
+-- 	return
+-- end
 
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -63,14 +63,14 @@ for type, icon in pairs(signs) do
 end
 
 -- configure java server
-lspconfig["jdtls"].setup({
+vim.lsp.config("jdtls", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	cmd = { "jdtls" },
 })
 
 -- configure rust server
-lspconfig["rust_analyzer"].setup({
+vim.lsp.config("rust_analyzer", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
@@ -79,7 +79,7 @@ lspconfig["rust_analyzer"].setup({
 })
 
 -- configure python server
-lspconfig["pyright"].setup({
+vim.lsp.config("pyright", {
 	settings = {
 		python = {
 			analysis = {
@@ -92,7 +92,7 @@ lspconfig["pyright"].setup({
 })
 
 -- configure html server
-lspconfig["html"].setup({
+vim.lsp.config("html", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
@@ -106,26 +106,26 @@ typescript.setup({
 })
 
 -- configure css server
-lspconfig["cssls"].setup({
+vim.lsp.config("cssls", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
 -- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
+vim.lsp.config("tailwindcss", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
 -- configure emmet language server
-lspconfig["emmet_ls"].setup({
+vim.lsp.config("emmet_ls", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
 -- configure lua server (with special settings)
-lspconfig["lua_ls"].setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
