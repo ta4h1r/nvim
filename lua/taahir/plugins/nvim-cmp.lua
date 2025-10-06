@@ -25,10 +25,20 @@ local has_words_before = function()
 	return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
 end
 
+-- import comparators from copilot_cmp plugin safely
+local comparators_satus, comparators = pcall(require, "copilot_cmp.comparators") 
+local priority 
+if not comparators_satus then
+    print("Could not load copilot_cmp comparators")
+else 
+    priority = comparators.priority
+end
+
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 cmp.setup({
 	snippet = {
@@ -67,5 +77,23 @@ cmp.setup({
 			ellipsis_char = "...",
 			symbol_map = { Copilot = "" },
 		}),
+	},
+	sorting = {
+		priority_weight = 2,
+		comparators = {
+            priority, 
+
+			-- Below is the default comparator list and order for nvim-cmp
+			cmp.config.compare.offset,
+			-- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+			cmp.config.compare.exact,
+			cmp.config.compare.score,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.locality,
+			cmp.config.compare.kind,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+		},
 	},
 })
