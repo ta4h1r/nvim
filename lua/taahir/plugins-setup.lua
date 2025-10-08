@@ -204,6 +204,8 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use("djoshea/vim-autoread")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
