@@ -78,7 +78,7 @@ return packer.startup(function(use)
 	-- managing & installing lsp servers, linters & formatters
 	use({
 		"mason-org/mason.nvim",
-		branch = "v1.x",
+		branch = "v2.1.0",
 	}) -- in charge of managing lsp servers, linters & formatters
 	use("mason-org/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
@@ -178,6 +178,8 @@ return packer.startup(function(use)
 	})
 
 	use("djoshea/vim-autoread")
+
+	use("stevearc/dressing.nvim") -- for enhanced input UI
 
 	if packer_bootstrap then
 		require("packer").sync()

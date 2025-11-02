@@ -5,10 +5,10 @@ if not cmp_nvim_lsp_status then
 end
 
 -- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-	return
-end
+-- local typescript_setup, typescript = pcall(require, "typescript")
+-- if not typescript_setup then
+-- 	return
+-- end
 
 local keymap = vim.keymap -- for conciseness
 
@@ -72,6 +72,8 @@ vim.lsp.config("rust_analyzer", {
 	},
 })
 
+vim.lsp.enable("rust_analyzer")
+
 -- configure python server
 vim.lsp.config("pyright", {
 	settings = {
@@ -92,12 +94,19 @@ vim.lsp.config("html", {
 })
 
 -- configure typescript server with plugin
-typescript.setup({
+vim.lsp.config("typescript", {
 	server = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 	},
 })
+
+-- typescript.setup({
+-- 	server = {
+-- 		capabilities = capabilities,
+-- 		on_attach = on_attach,
+-- 	},
+-- })
 
 -- configure css server
 vim.lsp.config("cssls", {
