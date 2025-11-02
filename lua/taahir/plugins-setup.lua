@@ -177,33 +177,6 @@ return packer.startup(function(use)
 		},
 	})
 
-	-- Avante
-
-	-- Required plugins
-	use("MunifTanjim/nui.nvim")
-	use("MeanderingProgrammer/render-markdown.nvim")
-
-	-- Optional dependencies
-	use("HakonHarnes/img-clip.nvim")
-	use("zbirenbaum/copilot.lua")
-	use("stevearc/dressing.nvim") -- for enhanced input UI
-	use("folke/snacks.nvim") -- for modern input UI
-
-	-- Avante.nvim with build process
-	use({
-		"yetone/avante.nvim",
-		branch = "main",
-		run = "make",
-	})
-
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua", "nvim-cmp" },
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	})
-
 	use("djoshea/vim-autoread")
 
 	if packer_bootstrap then
