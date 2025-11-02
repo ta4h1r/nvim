@@ -71,7 +71,6 @@ vim.lsp.config("rust_analyzer", {
 		["rust_analyzer"] = {},
 	},
 })
-
 vim.lsp.enable("rust_analyzer")
 
 -- configure python server
@@ -94,19 +93,11 @@ vim.lsp.config("html", {
 })
 
 -- configure typescript server with plugin
-vim.lsp.config("typescript", {
-	server = {
-		capabilities = capabilities,
-		on_attach = on_attach,
-	},
+vim.lsp.config("ts_ls", {
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
-
--- typescript.setup({
--- 	server = {
--- 		capabilities = capabilities,
--- 		on_attach = on_attach,
--- 	},
--- })
+vim.lsp.enable("ts_ls")
 
 -- configure css server
 vim.lsp.config("cssls", {
