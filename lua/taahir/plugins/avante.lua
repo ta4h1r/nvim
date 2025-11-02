@@ -1,5 +1,5 @@
 require("avante").setup({
-	provider = "copilot",
+	provider = "ollama",
 	providers = {
 		copilot = {
 			endpoint = "https://api.githubcopilot.com",

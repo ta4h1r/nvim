@@ -138,3 +138,8 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
+
+vim.lsp.config("null-ls", {
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
