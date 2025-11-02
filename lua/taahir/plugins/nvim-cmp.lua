@@ -52,13 +52,21 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 		["<C-e>"] = cmp.mapping.abort(), -- close completion window
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
+
+		-- Add tab support
+		["<S-Tab>"] = cmp.mapping.select_prev_item(),
+		["<Tab>"] = cmp.mapping.select_next_item(),
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" }, -- lsp
+		{ name = "path" }, -- file system paths
+		{ name = "nvim_lsp", keyword_length = 3 }, -- from language server
+		{ name = "nvim_lsp_signature_help" }, -- display function signatures with current parameter emphasized
+		{ name = "nvim_lua", keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
 		{ name = "luasnip" }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
-		{ name = "path" }, -- file system paths
+		{ name = "vsnip", keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
+		{ name = "calc" }, -- source for math calculation
 		-- { name = "copilot" }, -- copilot suggestions
 	}),
 	-- configure lspkind for vs-code like icons
