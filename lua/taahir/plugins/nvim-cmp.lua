@@ -57,6 +57,10 @@ cmp.setup({
 		["<S-Tab>"] = cmp.mapping.select_prev_item(),
 		["<Tab>"] = cmp.mapping.select_next_item(),
 	}),
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
 	-- sources for autocompletion
 	sources = cmp.config.sources({
 		{ name = "path" }, -- file system paths
@@ -68,4 +72,17 @@ cmp.setup({
 		{ name = "vsnip", keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
 		{ name = "calc" }, -- source for math calculation
 	}),
+	formatting = {
+		fields = { "menu", "abbr", "kind" },
+		format = function(entry, item)
+			local menu_icon = {
+				nvim_lsp = "λ",
+				vsnip = "⋗",
+				buffer = "Ω",
+				path = "",
+			}
+			item.menu = menu_icon[entry.source.name]
+			return item
+		end,
+	},
 })
