@@ -71,5 +71,5 @@ vim.api.nvim_set_option("updatetime", 300)
 -- Show inlay_hints more frequently
 vim.cmd([[
 set signcolumn=yes
-autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false, border = "single" })
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false, border = "double" })
 ]])
