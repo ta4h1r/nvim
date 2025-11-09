@@ -184,6 +184,9 @@ return packer.startup(function(use)
 
 	use("stevearc/dressing.nvim") -- for enhanced input UI
 
+	-- rust tools
+	use("simrat39/rust-tools.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

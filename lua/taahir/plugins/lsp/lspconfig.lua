@@ -73,6 +73,14 @@ vim.lsp.config("rust_analyzer", {
 })
 vim.lsp.enable("rust_analyzer")
 
+-- rust tools
+require("rust-tools").setup({
+	server = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	},
+})
+
 -- configure python server
 vim.lsp.config("pyright", {
 	settings = {
