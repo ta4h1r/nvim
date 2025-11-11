@@ -25,10 +25,10 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
-keymap.set("n", "<C-S-l>", "5<C-w>>") -- increase window width
-keymap.set("n", "<C-S-h>", "5<C-w><") -- decrease window width
-keymap.set("n", "<C-S-k>", "5<C-w>+") -- increase window height
-keymap.set("n", "<C-S-j>", "5<C-w>-") -- decrease window height
+keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- increase window width
+keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- decrease window width
+keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- increase window height
+keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- decrease window height
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
