@@ -6,6 +6,9 @@ local keymap = vim.keymap
 -- General Keymaps
 ---------------------
 
+-- save without autocommands/formatting
+keymap.set("n", "<leader>w", ":noa w<CR>")
+
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
